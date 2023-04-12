@@ -4,7 +4,7 @@ class Person {
         this.age = age;
     }
 
-    getInfo() {
+    getPersonInfo() {
         console.log(`Ім'я: ${this.name}, Вік: ${this.age}`);
     }
 }
@@ -15,7 +15,6 @@ class Car {
         this.model = model;
         this.year = year;
         this.number = number;
-        this.owner = null;
     }
 
     assignOwner(owner) {
@@ -26,11 +25,11 @@ class Car {
         }
     }
 
-    getInfo() {
+    getCarInfo() {
         console.log(`Марка: ${this.brand}; Модель: ${this.model}; Рік виписку: ${this.year}; Номерний знак: ${this.number}`);
-        if (this.owner !== null) {
+        if (this.owner) {
             console.log(`Власник:`);
-            this.owner.getInfo();
+            this.owner.getPersonInfo();
         } else {
             console.log(`Автомобіль не має власника`);
         }
@@ -38,7 +37,7 @@ class Car {
 }
 
 const person1 = new Person('Василь', 25);
-const person2 = new Person('Іван', 17);
+const person2 = new Person('Іван', 18);
 
 const car1 = new Car('Toyota', 'Camry', 2015, 'BC1234AA');
 const car2 = new Car('Honda', 'Civic', 2010, 'AB5678BC');
@@ -46,5 +45,5 @@ const car2 = new Car('Honda', 'Civic', 2010, 'AB5678BC');
 car1.assignOwner(person1);
 car2.assignOwner(person2);
 
-car1.getInfo();
-car2.getInfo();
+car1.getCarInfo();
+car2.getCarInfo();
